@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Club</title>
+</head>
+<body>
+
+<h2>Edit Club</h2>
+
+<form method="post">
+    <input type="hidden" name="csrf" value="{{ csrf }}">
+
+    <label>Club Name:</label><br>
+    <input type="text" name="name" value="{{ club.name }}" required><br><br>
+
+    <label>City:</label><br>
+    <input type="text" name="city" value="{{ club.city }}"><br><br>
+
+    <label>Stadium:</label><br>
+    <input type="text" name="stadium" value="{{ club.stadium }}"><br><br>
+
+    <label>Capacity:</label><br>
+    <input type="number" name="capacity" value="{{ club.capacity }}"><br><br>
+
+    <label>Founded Year:</label><br>
+    <input type="number" name="founded_year" value="{{ club.founded_year }}"><br><br>
+
+    <label>Manager:</label><br>
+    <input type="text" name="manager" value="{{ club.manager }}"><br><br>
+
+    <label>Notes:</label><br>
+    <textarea name="notes">{{ club.notes }}</textarea><br><br>
+
+    <button type="submit">Update Club</button>
+</form>
+
+<p><a href="list-clubs.php">Back to list</a></p>
+
+</body>
+</html>

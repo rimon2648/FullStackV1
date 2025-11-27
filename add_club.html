@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Club</title>
+</head>
+<body>
+
+<h1>Add New Club</h1>
+
+{% if success %}
+    <p style="color:green;">Club added successfully!</p>
+{% endif %}
+
+{% if errors %}
+    <ul style="color:red;">
+    {% for e in errors %}
+        <li>{{ e }}</li>
+    {% endfor %}
+    </ul>
+{% endif %}
+
+<form method="post" action="add_club.php">
+    <input type="hidden" name="csrf" value="{{ csrf }}">
+
+    <p>Club Name:<br>
+    <input type="text" name="name" required></p>
+
+    <p>City:<br>
+    <input type="text" name="city"></p>
+
+    <p>Stadium:<br>
+    <input type="text" name="stadium"></p>
+
+    <p>Capacity:<br>
+    <input type="number" name="capacity"></p>
+
+    <p>Founded Year:<br>
+    <input type="number" name="founded_year"></p>
+
+    <p>Manager:<br>
+    <input type="text" name="manager"></p>
+
+    <p>Notes:<br>
+    <textarea name="notes"></textarea></p>
+
+    <button type="submit">Add Club</button>
+</form>
+
+<p><a href="clubs.php">Back to Club List</a></p>
+
+</body>
+</html>
